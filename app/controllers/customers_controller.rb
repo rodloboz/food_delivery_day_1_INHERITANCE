@@ -8,7 +8,7 @@ class CustomersController
 
   def list
     customers = @customers_repository.all
-    @view.customers(customers)
+    @view.display(customers)
   end
 
   def add

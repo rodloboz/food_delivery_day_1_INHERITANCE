@@ -1,5 +1,5 @@
 class MealsView
-  def meals(meals)
+  def display(meals)
     meals.each do |meal|
       puts "#{meal.id} - #{meal.name} : #{meal.price}€"
     end
