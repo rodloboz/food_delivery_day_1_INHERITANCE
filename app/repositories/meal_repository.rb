@@ -1,5 +1,4 @@
 class MealRepository < BaseRepository
-
   private
 
   def build_element(row)

@@ -16,8 +16,6 @@ require 'csv'
 
 meals_csv_file = 'meals.csv'
 customers_csv_file = 'customers.csv'
-employees_csv_file = 'employees.csv'
-orders_csv_file = 'orders.csv'
 
 # Create repos
 meals_repository = MealRepository.new(meals_csv_file)
@@ -28,7 +26,7 @@ meals_controller = MealsController.new(meals_repository)
 customers_controller = CustomersController.new(customers_repository)
 controllers = {
   meals_controller: meals_controller,
-  customers_controller: customers_controller,
+  customers_controller: customers_controller
 }
 
 # Create router

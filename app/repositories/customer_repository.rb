@@ -1,5 +1,4 @@
 class CustomerRepository < BaseRepository
-
   private
 
   def build_element(row)

@@ -9,7 +9,7 @@ class Meal
   end
 
   def self.headers
-    %w(id name price)
+    %w[id name price]
   end
 
   def to_csv_row
