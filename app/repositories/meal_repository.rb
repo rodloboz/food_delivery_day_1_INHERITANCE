@@ -1,3 +1,5 @@
+require_relative 'base_repository'
+
 class MealRepository < BaseRepository
   private
 

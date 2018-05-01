@@ -1,9 +1,9 @@
-require_relative '../views/meals_views'
+require_relative '../views/meals_view'
 
 class MealsController
   def initialize(meals_repository)
     @meals_repository = meals_repository
-    @view = MealsViews.new
+    @view = MealsView.new
   end
 
   def list

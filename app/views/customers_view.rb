@@ -1,4 +1,4 @@
-class CustomersViews
+class CustomersView
   def customers(customers)
     customers.each do |customer|
       puts "#{customer.id} - Name: #{customer.name}, Address: #{customer.address}"

@@ -1,4 +1,4 @@
-class MealsViews
+class MealsView
   def meals(meals)
     meals.each do |meal|
       puts "#{meal.id} - #{meal.name} : #{meal.price}€"
