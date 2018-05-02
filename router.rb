@@ -3,6 +3,7 @@ class Router
   def initialize(controllers = {})
     @meals_controller = controllers[:meals_controller]
     @customers_controller = controllers[:customers_controller]
+    @orders_controller = controllers[:orders_controller]
     @sessions_controller = controllers[:sessions_controller]
     @running = true
   end
@@ -47,6 +48,8 @@ class Router
     when 2 then @meals_controller.add
     when 3 then @customers_controller.list
     when 4 then @customers_controller.add
+    when 5 then @orders_controller.list_undelivered_orders
+    when 6 then @orders_controller.add
     when 9 then destroy_session
     when 0 then stop
     else
@@ -63,14 +66,16 @@ class Router
     puts "2 - Add a new meal"
     puts "3 - List all customers"
     puts "4 - Add a new customer"
+    puts "5 - List undelivered orders"
+    puts "6 - Add an order"
     puts "9 - Log out"
     puts "0 - Stop and exit the program"
   end
 
   def route_delivery_guy_action(action)
     case action
-    when 1 then puts "listing orders.."
-    when 2 then puts "marking as delivered..."
+    when 1 then @orders_controller.list_my_orders(@user)
+    when 2 then @orders_controller.mark_as_delivered(@user)
     when 9 then "log out"
     when 0 then stop
     else
