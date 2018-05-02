@@ -9,7 +9,7 @@ class Customer
   end
 
   def self.headers
-    %w[id name address]
+    %w(id name address)
   end
 
   def to_csv_row

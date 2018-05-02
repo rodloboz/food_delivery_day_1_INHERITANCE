@@ -1,6 +1,5 @@
-require_relative 'base_repository'
-
 class CustomerRepository < BaseRepository
+
   private
 
   def build_element(row)

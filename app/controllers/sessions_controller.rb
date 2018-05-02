@@ -7,26 +7,22 @@ class SessionsController
   end
 
   def sign_in
-    # login:
-    # ask for username
+    # ask_user_for_username
     username = @view.ask_for(:username)
-    # ask for password
+    # ask_user_for_password
     password = @view.ask_for(:password)
-    # find an employee with username
+    # find_employee_with_username
     user = @employee_repository.find_by_username(username)
 
     if user && user.password == password
-      # compare
+      # Logged in
       @view.signed_in_successfully
-      return user
+      user
     else
+      # wrong
       @view.wrong_credentials
+      # try again
       sign_in # recursive call
     end
-
-
-    # compare employee pwd with
-    # provided pwd
-
   end
 end
