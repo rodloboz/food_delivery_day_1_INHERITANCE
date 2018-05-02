@@ -12,8 +12,8 @@ class CustomersController
   end
 
   def add
-    name = @view.ask_name
-    address = @view.ask_address
+    name = @view.ask_for(:name)
+    address = @view.ask_for(:address)
     customer = Customer.new(name: name, address: address)
     @customers_repository.add(customer)
   end

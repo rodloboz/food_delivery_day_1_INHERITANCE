@@ -12,8 +12,8 @@ class MealsController
   end
 
   def add
-    name = @view.ask_name
-    price = @view.ask_price
+    name = @view.ask_for(:name)
+    price = @view.ask_for(:price).to_i
     meal = Meal.new(name: name, price: price)
     @meals_repository.add(meal)
   end
